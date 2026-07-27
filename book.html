@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment — danA Wellness</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site">
+  <a href="index.html" class="logo"><span class="lc">dan</span><span class="cap">A</span></a>
+  <nav class="main">
+    <a href="index.html">Home</a>
+    <a href="treatments.html">Treatments</a>
+    <a href="book.html" class="active">Book Appointment</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <a href="book.html" class="btn filled small">Book Now</a>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-hero" style="padding-bottom:2.5rem;">
+  <div class="eyebrow" style="justify-content:center;">Book Appointment<span class="kr-inline"><span class="dot">·</span>예약하기</span></div>
+  <h1>Let's Find Your<br>Right Treatment</h1>
+  <p class="sub" style="margin-top:1rem;">Request an appointment online, or call us directly — whichever is easier.</p>
+</section>
+
+<section class="wrap" style="padding-top:0; padding-bottom:2.5rem;">
+  <a href="tel:+16502888467" class="call-banner glass">
+    <div class="cb-left">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></div>
+      <div>
+        <h3>Call Us Directly</h3>
+        <p>Prefer to talk it through? Our team is happy to help you book by phone.</p>
+      </div>
+    </div>
+    <span class="cb-number">(650) 288-8467</span>
+  </a>
+</section>
+
+<section class="wrap" id="booking-form" style="padding-top:0;">
+  <div class="eyebrow" style="justify-content:center;">Request Online<span class="kr-inline"><span class="dot">·</span>온라인 예약</span></div>
+  <h2 style="text-align:center;">Request an Appointment</h2>
+  <div class="form-wrap glass">
+    <form id="bookingForm">
+      <div class="field-row">
+        <div class="field">
+          <label for="b-name">Full Name</label>
+          <input type="text" id="b-name" required>
+        </div>
+        <div class="field">
+          <label for="b-phone">Phone</label>
+          <input type="tel" id="b-phone" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="b-email">Email</label>
+        <input type="email" id="b-email" required>
+      </div>
+
+      <div class="field">
+        <label>Treatment(s) of Interest</label>
+        <div class="check-groups" id="treatmentChecks">
+          <fieldset>
+            <legend>Wellness — IV Therapy</legend>
+            <label><input type="checkbox" value="Hangover Relief">Hangover Relief</label>
+            <label><input type="checkbox" value="Headache Relief">Headache Relief</label>
+            <label><input type="checkbox" value="Immunity">Immunity</label>
+            <label><input type="checkbox" value="Jet Lag">Jet Lag</label>
+            <label><input type="checkbox" value="Beauty IV">Beauty IV</label>
+            <label><input type="checkbox" value="Fitness Recovery">Fitness Recovery</label>
+            <label><input type="checkbox" value="Flu Treatment">Flu Treatment</label>
+            <label><input type="checkbox" value="Myers Cocktail">Myers Cocktail</label>
+            <label><input type="checkbox" value="Food Poisoning Support">Food Poisoning Support</label>
+            <label><input type="checkbox" value="Post-Surgery Support">Post-Surgery Support</label>
+            <label><input type="checkbox" value="NAD+ IV Therapy">NAD+ IV Therapy</label>
+          </fieldset>
+          <fieldset>
+            <legend>Wellness — Injections</legend>
+            <label><input type="checkbox" value="Vitamin B12">Vitamin B12</label>
+            <label><input type="checkbox" value="Vitamin D3">Vitamin D3</label>
+            <label><input type="checkbox" value="Glutathione">Glutathione</label>
+            <label><input type="checkbox" value="Biotin">Biotin</label>
+            <label><input type="checkbox" value="GLP-1 Microdosing">GLP-1 Microdosing</label>
+          </fieldset>
+          <fieldset>
+            <legend>Aesthetics</legend>
+            <label><input type="checkbox" value="Neurotoxins (Botox / Dysport / Xeomin)">Neurotoxins (Botox / Dysport / Xeomin)</label>
+            <label><input type="checkbox" value="Dermal Fillers">Dermal Fillers</label>
+            <label><input type="checkbox" value="Skin Boosters">Skin Boosters</label>
+            <label><input type="checkbox" value="RF Microneedling">RF Microneedling</label>
+            <label><input type="checkbox" value="Oligio Skin Tightening">Oligio Skin Tightening</label>
+            <label><input type="checkbox" value="Dermotoxin">Dermotoxin</label>
+          </fieldset>
+          <fieldset>
+            <legend>Signature Korean Skin Treatments</legend>
+            <label><input type="checkbox" value="The Upkeeper — $219">The Upkeeper — $219</label>
+            <label><input type="checkbox" value="The Devotee — $349">The Devotee — $349</label>
+            <label><input type="checkbox" value="The Disciple — $949">The Disciple — $949</label>
+            <label><input type="checkbox" value="The Evangelist — $1,499">The Evangelist — $1,499</label>
+            <label><input type="checkbox" value="The Idealist — $2,199">The Idealist — $2,199</label>
+          </fieldset>
+          <fieldset>
+            <legend>Special Offers</legend>
+            <label><input type="checkbox" value="Xeomin Botox Bank">Xeomin Botox Bank</label>
+            <label><input type="checkbox" value="Choose Your Own IV Package">Choose Your Own IV Package</label>
+            <label><input type="checkbox" value="Oligio + Rejuran + Beauty IV Special">Oligio + Rejuran + Beauty IV Special</label>
+          </fieldset>
+          <fieldset>
+            <legend>Not Sure Yet</legend>
+            <label><input type="checkbox" value="I'd like a consultation">I'd like a consultation</label>
+          </fieldset>
+        </div>
+        <span class="selected-count" id="selectedCount">No treatments selected yet</span>
+      </div>
+
+      <div class="field-row">
+        <div class="field">
+          <label for="b-date">Preferred Date</label>
+          <input type="date" id="b-date">
+        </div>
+        <div class="field">
+          <label for="b-time">Preferred Time</label>
+          <input type="time" id="b-time">
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="b-notes">Notes (optional)</label>
+        <textarea id="b-notes" rows="4" placeholder="Tell us about your goals, or any questions before your visit."></textarea>
+      </div>
+
+      <button type="submit" class="btn filled" style="width:100%; justify-content:center;">Request Appointment</button>
+      <p class="form-note">Submitting opens an email to our booking team with your details — we'll follow up to confirm a time. For faster booking, call us directly at <a href="tel:+16502888467" style="color:var(--rose-deep);">(650) 288-8467</a>.</p>
+    </form>
+
+    <div class="form-success" id="bookSuccess">
+      Thank you — your email client should now be open with your request. If it didn't open, please email us directly at <a href="mailto:contact@danawellness.com" style="color:var(--rose-deep);">contact@danawellness.com</a>.
+    </div>
+  </div>
+</section>
+
+<section class="wrap" style="padding-top:3rem;">
+  <div class="info-grid">
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h16v14H4z"/><path d="M4 8h16"/><path d="M8 3v4M16 3v4"/></svg></div>
+      <h4>Hours</h4>
+      <p>[Add clinic hours here]<br>e.g. Tue–Sat, 10am–6pm</p>
+    </div>
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></div>
+      <h4>Call Us</h4>
+      <p><a href="tel:+16502888467" style="color:inherit;">(650) 288-8467</a></p>
+    </div>
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <h4>Email</h4>
+      <p><a href="mailto:contact@danawellness.com" style="color:inherit;">contact@danawellness.com</a></p>
+    </div>
+  </div>
+
+  <details class="guidance glass">
+    <summary>Treatment Guidance</summary>
+    <p>Each treatment is personalized to the individual's skin, health history, goals, and treatment plan. Medical consultations, pre-care instructions, post-care instructions, expected results, and frequently asked questions are provided as part of the treatment experience when applicable.</p>
+  </details>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-logo"><span class="lc">dan</span><span class="cap">A</span> Wellness</div>
+        <p class="foot-desc">Beauty and wellness, together. Personalized aesthetic and wellness care rooted in Korean skincare philosophy.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Visit</h5>
+        <a href="index.html">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="book.html">Book Appointment</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <a href="mailto:contact@danawellness.com">contact@danawellness.com</a>
+        <a href="tel:+16502888467">(650) 288-8467</a>
+        <a href="contact.html">215 N San Mateo Dr, San Mateo, CA 94401</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 danA Wellness.</span>
+      <span>단아하다 · graceful, refined, quietly elegant.</span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
