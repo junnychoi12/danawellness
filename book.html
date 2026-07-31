@@ -3,84 +3,151 @@
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Book Appointment — danA Wellness Clinic</title>
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="dana-app">
 <header class="dana-header">
   <a href="index.html" class="dana-logo"><span class="lc">dan</span><span class="cap">A</span></a>
-  <nav class="dana-nav" id="nav"><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="book.html" class="active">Book Appointment</a><a href="contact.html">Contact</a></nav>
-  <div style="display:flex;align-items:center;gap:1rem"><a href="book.html" class="dana-btn filled small">Book Now</a><button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')"><span></span><span></span><span></span></button></div>
+  <nav class="dana-nav" id="mainNav">
+    <a href="index.html">Home</a>
+    <a href="treatments.html">Treatments</a>
+    <a href="book.html" class="active">Book Appointment</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:1rem">
+    <a href="book.html" class="dana-btn filled small">Book Now</a>
+    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')"><span></span><span></span><span></span></button>
+  </div>
 </header>
 
 <section class="page-hero" style="padding-bottom:2.5rem">
-  <div class="eyebrow" style="justify-content:center">Book Appointment <span class="kr-inline"><span class="dot">·</span>예약하기</span></div>
-  <h1>Let's Find Your<br>Right Treatment</h1>
-  <p class="sub" style="margin-top:1rem">Request an appointment online, or call us directly — whichever is easier.</p>
-</section>
-
-<section class="wrap" style="padding-top:0;padding-bottom:2.5rem">
-  <a href="tel:+16506710965" class="call-banner glass">
-    <div class="cb-left"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></div><div><h3>Call Us Directly</h3><p>Prefer to talk it through? Our team is happy to help you book by phone.</p></div></div>
-    <span class="cb-number">(650) 671-0965</span>
-  </a>
+  <div class="eyebrow" style="justify-content:center">Book Appointment <span class="kr-inline"><span class="dot">&middot;</span>예약하기</span></div>
+  <h1>Find Your Perfect Treatment</h1>
+  <p class="sub" style="margin-top:1rem">Schedule your visit — call us now or request a callback at a time that works for you.</p>
 </section>
 
 <section class="wrap" style="padding-top:0">
-  <div class="eyebrow" style="justify-content:center">Request Online <span class="kr-inline"><span class="dot">·</span>온라인 예약</span></div>
-  <h2 style="text-align:center">Request an Appointment</h2>
-  <div class="form-wrap glass">
-    <form id="bookForm">
-      <div class="field-row"><div class="field"><label for="b-name">Full Name</label><input type="text" id="b-name" required></div><div class="field"><label for="b-phone">Phone</label><input type="tel" id="b-phone" required></div></div>
-      <div class="field"><label for="b-email">Email</label><input type="email" id="b-email" required></div>
-      <div class="field"><label>Treatment(s) of Interest</label>
-        <div class="check-groups">
-          <fieldset><legend>Wellness — IV Therapy</legend><label><input type="checkbox" value="Beauty Glow IV">Beauty Glow IV</label><label><input type="checkbox" value="Wellness Boost IV">Wellness Boost IV</label><label><input type="checkbox" value="Jet Lag Recovery IV">Jet Lag Recovery IV</label><label><input type="checkbox" value="Hangover Recovery IV">Hangover Recovery IV</label><label><input type="checkbox" value="Myers' Cocktail IV">Myers' Cocktail IV</label><label><input type="checkbox" value="NAD+ IV Therapy">NAD+ IV Therapy</label></fieldset>
-          <fieldset><legend>Wellness — Injections</legend><label><input type="checkbox" value="Vitamin B12">Vitamin B12</label><label><input type="checkbox" value="Vitamin D3">Vitamin D3</label><label><input type="checkbox" value="Glutathione">Glutathione</label><label><input type="checkbox" value="Biotin">Biotin</label><label><input type="checkbox" value="GLP-1 Microdosing">GLP-1 Microdosing</label></fieldset>
-          <fieldset><legend>Aesthetics</legend><label><input type="checkbox" value="Neurotoxins">Neurotoxins (Botox / Letybo / Xeomin)</label><label><input type="checkbox" value="Dermal Fillers">Dermal Fillers</label><label><input type="checkbox" value="Skin Boosters">Skin Boosters</label><label><input type="checkbox" value="RF Microneedling">RF Microneedling</label><label><input type="checkbox" value="Oligio RF">Oligio RF Skin Tightening &amp; Lifting</label><label><input type="checkbox" value="Dermotoxin">Dermotoxin</label></fieldset>
-          <fieldset><legend>Signature Protocols</legend><label><input type="checkbox" value="The Prelude">The Prelude — $390+</label><label><input type="checkbox" value="The Emergence">The Emergence — $690+</label><label><input type="checkbox" value="The Timeless">The Timeless — $1,990+</label></fieldset>
-          <fieldset><legend>Special Offers</legend><label><input type="checkbox" value="Botox Bank">Botox Bank (Xeomin)</label><label><input type="checkbox" value="IV Package">IV Therapy Package</label><label><input type="checkbox" value="Grand Opening">Grand Opening Special</label></fieldset>
-          <fieldset><legend>Not Sure Yet</legend><label><input type="checkbox" value="Consultation">I'd like a consultation</label></fieldset>
-        </div>
+  <!-- Call Now Card -->
+  <a href="tel:+16502888467" class="glass call-banner" style="display:flex;align-items:center;gap:1.5rem;padding:1.5rem 2rem;border-radius:20px;text-decoration:none;color:var(--ink);margin-bottom:2rem">
+    <div style="width:52px;height:52px;min-width:52px;border-radius:50%;background:var(--rose-deep);display:flex;align-items:center;justify-content:center">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="24" height="24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg>
+    </div>
+    <div style="flex:1">
+      <h3 style="font-size:1.3rem;margin-bottom:0.25rem">Call Now</h3>
+      <p style="font-size:0.88rem;color:var(--ink-soft);margin:0">Speak with us directly to schedule your visit</p>
+    </div>
+    <span class="cb-number">(650) 288-8467</span>
+  </a>
+
+  <!-- Request Callback Card -->
+  <div class="glass" style="padding:1.5rem 2rem;border-radius:20px">
+    <div style="display:flex;align-items:flex-start;gap:1.5rem">
+      <div style="width:52px;height:52px;min-width:52px;border-radius:50%;background:var(--rose-deep);display:flex;align-items:center;justify-content:center;margin-top:0.2rem">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" width="24" height="24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       </div>
-      <div class="field-row"><div class="field"><label for="b-date">Preferred Date</label><input type="date" id="b-date"></div><div class="field"><label for="b-time">Preferred Time</label><input type="time" id="b-time"></div></div>
-      <div class="field"><label for="b-notes">Notes (optional)</label><textarea id="b-notes" rows="4" placeholder="Tell us about your goals, or any questions before your visit."></textarea></div>
-      <button type="submit" class="dana-btn filled" style="width:100%;justify-content:center">Request Appointment</button>
-      <p class="form-note">Submitting opens an email to our booking team — we'll follow up to confirm a time. For faster booking, call <a href="tel:+16506710965" style="color:var(--rose-deep)">(650) 671-0965</a>.</p>
-    </form>
+      <div style="flex:1">
+        <h3 style="font-size:1.3rem;margin-bottom:0.25rem">Request a Callback</h3>
+        <p style="font-size:0.88rem;color:var(--ink-soft);margin:0 0 1.2rem">Leave your info and we'll call you back</p>
+
+        <form id="callbackForm">
+          <div class="field">
+            <label for="cb-name">Full Name</label>
+            <input type="text" id="cb-name" required style="background:#fff">
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="cb-phone">Phone</label>
+              <input type="tel" id="cb-phone" required style="background:#fff">
+            </div>
+            <div class="field">
+              <label for="cb-email">Email (optional)</label>
+              <input type="email" id="cb-email" style="background:#fff">
+            </div>
+          </div>
+          <div class="field">
+            <label>Interested in (optional)</label>
+            <div id="treatmentDropdown" style="background:#fff;border:1px solid var(--sage);border-radius:10px;padding:0.7rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.9rem;color:var(--ink-soft)" onclick="document.getElementById('treatmentList').style.display=document.getElementById('treatmentList').style.display==='none'?'block':'none'">
+              <span id="dropdownLabel">Select treatments…</span>
+              <span style="font-size:0.7rem">▼</span>
+            </div>
+            <div id="treatmentList" style="display:none;background:#fff;border:1px solid var(--sage);border-radius:10px;margin-top:0.3rem;max-height:260px;overflow-y:auto;padding:0.2rem 0">
+              <div class="tgroup"><div class="tgroup-title">Special Offers</div><label class="tcheck"><input type="checkbox" value="Botox Bank (Xeomin)"> Botox Bank (Xeomin)</label><label class="tcheck"><input type="checkbox" value="IV Therapy Package"> IV Therapy Package</label><label class="tcheck"><input type="checkbox" value="Welcome Special"> Welcome Special</label></div>
+              <div class="tgroup"><div class="tgroup-title">IV Lounge</div><label class="tcheck"><input type="checkbox" value="Beauty Glow IV"> Beauty Glow IV</label><label class="tcheck"><input type="checkbox" value="Wellness Boost IV"> Wellness Boost IV</label><label class="tcheck"><input type="checkbox" value="Jet Lag Recovery IV"> Jet Lag Recovery IV</label><label class="tcheck"><input type="checkbox" value="Hangover Recovery IV"> Hangover Recovery IV</label><label class="tcheck"><input type="checkbox" value="Myers' Cocktail IV"> Myers' Cocktail IV</label><label class="tcheck"><input type="checkbox" value="NAD+ IV Therapy"> NAD+ IV Therapy</label><label class="tcheck"><input type="checkbox" value="GLP-1 Microdosing"> GLP-1 Microdosing</label><label class="tcheck"><input type="checkbox" value="Vitamin Injections"> Vitamin Injections</label></div>
+              <div class="tgroup"><div class="tgroup-title">Signature Wellness</div><label class="tcheck"><input type="checkbox" value="Longevity & Performance"> Longevity & Performance</label><label class="tcheck"><input type="checkbox" value="Men's Wellness"> Men's Wellness</label><label class="tcheck"><input type="checkbox" value="Women's Wellness"> Women's Wellness</label><label class="tcheck"><input type="checkbox" value="Weight Management"> Weight Management</label></div>
+              <div class="tgroup"><div class="tgroup-title">Aesthetics</div><label class="tcheck"><input type="checkbox" value="Injectables & Regenerative Treatments"> Injectables & Regenerative Treatments</label><label class="tcheck"><input type="checkbox" value="Skin Tightening & Lifting"> Skin Tightening & Lifting</label></div>
+              <div class="tgroup"><div class="tgroup-title">Signature Skin</div><label class="tcheck"><input type="checkbox" value="The Prelude"> The Prelude</label><label class="tcheck"><input type="checkbox" value="The Emergence"> The Emergence</label><label class="tcheck"><input type="checkbox" value="The Timeless"> The Timeless</label></div>
+              <div class="tgroup"><label class="tcheck"><input type="checkbox" value="Not sure yet / Consultation"> Not sure yet / Consultation</label></div>
+            </div>
+          </div>
+          <button type="submit" class="dana-btn filled" style="width:100%;justify-content:center;margin-top:0.5rem">Request Callback</button>
+        </form>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="wrap" style="padding-top:3rem">
+<!-- Info Grid -->
+<section class="wrap" style="padding-top:3.5rem">
   <div class="info-grid">
-    <div class="info-card glass"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h16v14H4z"/><path d="M4 8h16"/><path d="M8 3v4M16 3v4"/></svg></div><h4>Hours</h4><p>Tue–Sun, 11am–7pm<br>or by appointment</p></div>
-    <div class="info-card glass"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></div><h4>Call Us</h4><p><a href="tel:+16506710965" style="color:inherit">(650) 671-0965</a></p></div>
-    <div class="info-card glass"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></div><h4>Email</h4><p><a href="mailto:info@danawellnessclinic.com" style="color:inherit">info@danawellnessclinic.com</a></p></div>
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M4 5h16v14H4z"/><path d="M4 8h16"/><path d="M8 3v4M16 3v4"/></svg></div>
+      <h4>Hours</h4>
+      <p>Tue–Sun, 11am–7pm<br>or by appointment</p>
+    </div>
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.7a2 2 0 0 1-.4 2.1L8 9.9a16 16 0 0 0 6 6l1.4-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.5 2.7.6a2 2 0 0 1 1.8 2Z"/></svg></div>
+      <h4>Call Us</h4>
+      <p><a href="tel:+16502888467" style="color:inherit">(650) 288-8467</a></p>
+    </div>
+    <div class="info-card glass">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg></div>
+      <h4>Email</h4>
+      <p><a href="mailto:info@danawellnessclinic.com" style="color:inherit">info@danawellnessclinic.com</a></p>
+    </div>
   </div>
 </section>
 
-<footer class="dana-footer"><div class="wrap">
-  <div class="foot-grid">
-    <div><div class="foot-logo"><span class="lc">dan</span><span class="cap">A</span> Wellness Clinic</div><p class="foot-desc">Beauty and wellness, together. Personalized aesthetic and wellness care rooted in Korean skincare philosophy.</p></div>
-    <div class="foot-col"><h5>Visit</h5><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="book.html">Book Appointment</a><a href="contact.html">Contact</a></div>
-    <div class="foot-col"><h5>Contact</h5><a href="mailto:info@danawellnessclinic.com">info@danawellnessclinic.com</a><a href="tel:+16506710965">(650) 671-0965</a><a href="contact.html">215 N San Mateo Dr, Fl 2 Ste 9, San Mateo, CA 94401</a></div>
+<footer class="dana-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><div class="foot-logo"><span class="lc">dan</span><span class="cap">A</span> Wellness Clinic</div><p class="foot-desc">Beauty and wellness, together. Personalized aesthetic and wellness care rooted in Korean skincare philosophy.</p></div>
+      <div class="foot-col"><h5>Visit</h5><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="book.html">Book Appointment</a><a href="contact.html">Contact</a></div>
+      <div class="foot-col"><h5>Contact</h5><a href="mailto:info@danawellnessclinic.com">info@danawellnessclinic.com</a><a href="tel:+16502888467">(650) 288-8467</a><a href="contact.html">215 N San Mateo Dr, San Mateo, CA 94401</a></div>
+    </div>
+    <div class="foot-bottom"><span>&copy; 2026 danA Wellness Clinic.</span><span>단아하다 &middot; graceful, refined, quietly elegant.</span></div>
   </div>
-  <div class="foot-bottom"><span>© 2026 danA Wellness Clinic.</span><span>단아하다 · graceful, refined, quietly elegant.</span></div>
-</div></footer>
+</footer>
 
 <script>
-document.getElementById('bookForm').addEventListener('submit',function(e){
+// Treatment dropdown logic
+document.querySelectorAll('#treatmentList input[type="checkbox"]').forEach(cb => {
+  cb.addEventListener('change', () => {
+    const checked = document.querySelectorAll('#treatmentList input:checked');
+    const label = document.getElementById('dropdownLabel');
+    label.textContent = checked.length === 0 ? 'Select treatments…' : checked.length + ' treatment' + (checked.length > 1 ? 's' : '') + ' selected';
+    label.style.color = checked.length ? 'var(--ink)' : 'var(--ink-soft)';
+  });
+});
+// Form submit
+document.getElementById('callbackForm').addEventListener('submit', function(e) {
   e.preventDefault();
-  const name=document.getElementById('b-name').value;
-  const email=document.getElementById('b-email').value;
-  const phone=document.getElementById('b-phone').value;
-  const date=document.getElementById('b-date').value;
-  const time=document.getElementById('b-time').value;
-  const notes=document.getElementById('b-notes').value;
-  const checked=[...document.querySelectorAll('.check-groups input:checked')].map(c=>c.value).join(', ')||'Not specified';
-  const subject=encodeURIComponent('Appointment Request — '+(checked.split(',')[0]||'danA Wellness Clinic'));
-  const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nTreatment(s): ${checked}\nPreferred Date: ${date}\nPreferred Time: ${time}\nNotes: ${notes}`);
-  window.location.href=`mailto:info@danawellnessclinic.com?subject=${subject}&body=${body}`;
+  const name = document.getElementById('cb-name').value;
+  const phone = document.getElementById('cb-phone').value;
+  const email = document.getElementById('cb-email').value;
+  const checked = Array.from(document.querySelectorAll('#treatmentList input:checked')).map(c => c.value);
+  const treatments = checked.length ? checked.join(', ') : 'Not specified';
+  const subject = encodeURIComponent('Callback Request — danA Wellness Clinic');
+  const body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + treatments + '\n\nPlease call me back to schedule an appointment.');
+  window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
 });
 </script>
+<style>
+.tgroup{border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem;padding-top:0.2rem}
+.tgroup:first-child{border-top:none;margin-top:0}
+.tgroup-title{font-size:0.7rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep);padding:0.4rem 0.4rem 0.1rem}
+.tcheck{display:flex;align-items:center;gap:0.2rem;padding:0.25rem 0.4rem;cursor:pointer;font-size:0.8rem;color:var(--ink)}
+.tcheck input{accent-color:var(--rose-deep);width:14px;height:14px;margin:0}
+</style>
 </body>
 </html>
