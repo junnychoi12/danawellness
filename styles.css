@@ -129,6 +129,11 @@
 @media(max-width:900px){
 .dana-nav{position:fixed;top:63px;left:0;right:0;bottom:0;background:var(--ivory);opacity:1;z-index:150;flex-direction:column;justify-content:flex-start;align-items:flex-start;padding:2.4rem 6vw;gap:1.6rem;transform:translateX(100%);transition:transform 0.3s ease}
 .dana-nav.open{transform:translateX(0)}
+.dana-header:has(.dana-nav.open) {
+    background: var(--ivory);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
 .nav-toggle{display:block}
 .phi-grid,.phi-grid.reverse{grid-template-columns:1fr}
 .phi-grid.reverse .phi-img{order:0}
