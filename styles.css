@@ -606,7 +606,11 @@ details[open] .dana-summary .plus {
   font-size: 1.9rem;
   color: var(--rose-deep);
 }
-
+.sig-grid {
+  display: grid;
+  grid-auto-rows: 1fr;
+  gap: 3rem;
+}
 /* Signature cards */
 .sig-card {
   display: grid;
@@ -892,6 +896,9 @@ details[open] .dana-summary .plus {
   .info-grid {
     grid-template-columns: 1fr;
   }
+  .sig-grid {
+  grid-auto-rows: auto;
+}
   .sig-card {
     grid-template-columns: 1fr !important;
   }
