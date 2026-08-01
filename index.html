@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>danA Wellness Clinic</title>
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>danA Wellness Clinic</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&family=Noto+Serif+KR:wght@400;500;600&display=swap" rel="stylesheet" />
 </head>
-<body class="dana-app">
+<body>
+
 <header class="dana-header">
-  <a href="index.html" class="dana-logo"><span class="lc">dan</span><span class="cap">A</span></a>
-  <nav class="dana-nav" id="mainNav">
+  <a href="index.html" class="dana-logo"><span class="lc">d</span><span style="font-size:1.15em">an</span><span class="cap">A</span></a>
+  <nav class="dana-nav">
     <a href="index.html" class="active">Home</a>
     <a href="treatments.html">Treatments</a>
     <a href="book.html">Book Appointment</a>
@@ -17,14 +21,17 @@
   </nav>
   <div style="display:flex;align-items:center;gap:1rem">
     <a href="book.html" class="dana-btn filled small">Book Now</a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')"><span></span><span></span><span></span></button>
+    <button class="nav-toggle" onclick="document.querySelector('.dana-nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
+<!-- Hero -->
 <section class="page-hero">
   <div class="eyebrow" style="justify-content:center;word-spacing:0.18em;flex-wrap:wrap">
     <span style="white-space:nowrap"><span style="text-transform:none;letter-spacing:0.16em"><span style="font-size:1.15em">dan</span>A</span> Wellness Clinic</span>
-    <span class="kr-inline"><span class="dot">&middot;</span>단아 웰니스 클리닉</span>
+    <span class="kr-inline"><span class="dot">·</span>단아 웰니스 클리닉</span>
   </div>
   <h1>Beauty and Wellness,<br>Together</h1>
   <p class="sub" style="margin-top:1rem">Personalized aesthetic and wellness care, guided by the art of Korean skin rejuvenation.</p>
@@ -34,85 +41,10 @@
   </div>
 </section>
 
+<!-- Special Offers Banner -->
 <section class="wrap" style="padding-top:0;padding-bottom:1rem">
   <a href="treatments.html#tab-offers" class="offers-banner">
     <div class="ob-left">
       <span class="ob-tag">Special Offers</span>
-      <div><h3>Save up to 47% on select treatments</h3><p>Botox Bank, IV bundles, and a limited Oligio + Rejuran package</p></div>
-    </div>
-    <span class="ob-arrow">View Offers &rarr;</span>
-  </a>
-</section>
-
-<div class="philosophy-block">
-  <section class="wrap phi-grid">
-    <div class="phi-img glass" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1471086569966-db3eebc25a59?w=800&h=1000&fit=crop&crop=center&auto=format&q=80" alt="Green monstera leaf in glass vase">
-      <div class="tint"></div>
-    </div>
-    <div class="phi-copy">
-      <div class="eyebrow">Our Philosophy</div>
-      <h2>Beauty Begins with Wellness</h2>
-      <p>Our treatments support your body, skin, and confidence at every stage of life — because hydration, nutrition, and cellular health all shape how skin looks and feels.</p>
-      <p>By combining advanced aesthetic treatments with our signature wellness therapy, we help you look refreshed and feel your best, from the inside out.</p>
-    </div>
-  </section>
-</div>
-
-<div class="philosophy-block">
-  <section class="wrap phi-grid reverse" style="gap:13vw">
-    <div class="phi-img glass" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=800&h=1000&fit=crop&auto=format&q=80" alt="Serum dropper bottles">
-      <div class="tint"></div>
-    </div>
-    <div class="phi-copy">
-      <div class="eyebrow" style="word-spacing:0.18em">The Name <span style="text-transform:none;letter-spacing:0.16em"><span style="font-size:1.15em">dan</span>A</span></div>
-      <h2>Timeless Beauty,<br>Thoughtfully Refined</h2>
-      <p>Timeless beauty isn't about turning back the clock — it's about embracing every stage of life with confidence and grace.</p>
-      <div class="name-note glass">
-        <strong>danA</strong> comes from the Korean word <span style="font-family:'Noto Serif KR',serif;color:var(--ink)">dana-hada (단아하다)</span> — a beauty that is graceful, refined, and quietly elegant. It reflects our philosophy of personalized care that enhances your natural features without looking overdone.
-      </div>
-      <p style="margin-top:1.2rem;font-size:0.92rem">We continuously refine our skills through advanced training in Seoul, bringing the latest Korean aesthetic techniques to every treatment.</p>
-    </div>
-  </section>
-</div>
-
-<div class="philosophy-block">
-  <section class="wrap phi-grid">
-    <div class="phi-img glass" aria-hidden="true">
-      <img src="images/consultation-clinic.webp" alt="Clients reviewing treatment plan with clinician">
-      <div class="tint"></div>
-    </div>
-    <div class="phi-copy">
-      <div class="eyebrow">Our Approach</div>
-      <h2>A Smarter Approach<br>to Skin Longevity &amp; Wellness</h2>
-      <p>True luxury isn't about doing more — it's about doing what's right for your skin. We focus on the foundation: supporting collagen, strengthening the skin barrier, and promoting long-term health.</p>
-      <p>Rather than chasing temporary results, we combine regenerative medicine and evidence-based treatments so skin ages naturally and beautifully.</p>
-    </div>
-  </section>
-</div>
-
-<section class="cta-band" style="margin-top:3.5rem">
-  <div class="wrap" style="padding:0">
-    <div class="eyebrow" style="justify-content:center;color:var(--gold)">Ready When You Are</div>
-    <h2>Begin with a consultation</h2>
-    <p>Explore our wellness and aesthetic treatments, or book a visit directly.</p>
-    <a href="book.html" class="dana-btn">Book Appointment</a>
-  </div>
-</section>
-
-<footer class="dana-footer">
-  <div class="wrap">
-    <div class="foot-grid">
       <div>
-        <div class="foot-logo"><span class="lc">dan</span><span class="cap">A</span> Wellness Clinic</div>
-        <p class="foot-desc">Beauty and wellness, together. Personalized aesthetic and wellness care rooted in Korean skincare philosophy.</p>
-      </div>
-      <div class="foot-col"><h5>Visit</h5><a href="index.html">Home</a><a href="treatments.html">Treatments</a><a href="book.html">Book Appointment</a><a href="contact.html">Contact</a></div>
-      <div class="foot-col"><h5>Contact</h5><a href="mailto:info@danawellnessclinic.com">info@danawellnessclinic.com</a><a href="tel:+16502888467">(650) 288-8467</a><a href="contact.html">215 N San Mateo Dr, Fl 2 Ste 9, San Mateo, CA 94401</a></div>
-    </div>
-    <div class="foot-bottom"><span>&copy; 2026 danA Wellness Clinic.</span><span>단아하다 &middot; graceful, refined, quietly elegant.</span></div>
-  </div>
-</footer>
-</body>
-</html>
+        <h3>Save up to 47% on select treatments</h3>
