@@ -660,7 +660,7 @@ details[open] .dana-summary .plus {
    FORMS
 ═══════════════════════════════════════════════════ */
 .form-wrap {
-  max-width: 920px;
+  max-width: none;
   margin: 0 auto;
   padding: 2.8rem 3.4rem;
 }
