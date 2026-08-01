@@ -219,6 +219,6 @@
   .check-groups{padding:1rem 1rem}
   .check-groups label{gap:0.5rem;font-size:0.85rem;word-break:break-word}
 }
-.dd-item{display:flex;align-items:center;gap:0.2rem;padding:0.25rem 0.4rem;cursor:pointer;font-size:0.8rem;color:var(--ink);text-transform:none;letter-spacing:normal}
-.dd-item:hover{background:rgba(74,103,65,0.06)}
-.dd-item input[type="checkbox"]{accent-color:var(--rose-deep);flex-shrink:0;margin:0;width:14px;height:14px}
+.field .dd-item{display:flex!important;align-items:center;gap:0.5rem;padding:0.4rem 0.6rem;cursor:pointer;font-size:0.85rem;color:var(--ink);text-transform:none;letter-spacing:normal;flex-wrap:nowrap;margin-bottom:0}
+.field .dd-item:hover{background:rgba(74,103,65,0.06)}
+.field .dd-item input[type="checkbox"]{accent-color:var(--rose-deep);flex-shrink:0;margin:0;width:16px;height:16px;min-width:16px;padding:0}
