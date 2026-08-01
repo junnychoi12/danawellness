@@ -847,7 +847,7 @@ details[open] .dana-summary .plus {
   flex-basis: 100%;
   margin-top: 0.8rem;
 }
-  .dana-nav {
+.dana-nav {
   position: fixed;
   top: 63px;
   left: auto;
