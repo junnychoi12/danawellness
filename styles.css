@@ -617,22 +617,11 @@ details[open] .dana-summary .plus { transform: rotate(45deg); }
 
   .card-grid.cols-3 { grid-template-columns: 1fr; }
 
-  /* Signature cards — image at bottom, full width */
   .sig-card[style*="grid-template-columns"] {
     display: flex !important;
     flex-direction: column;
-    padding: 0 !important;
-    overflow: hidden;
   }
-  .sig-card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 0;
-  }
-  .sig-card > div:first-child {
-    padding: 1.6rem !important;
-  }
+  .sig-card img { height: 200px; order: -1; }
 
   .cols { grid-template-columns: 1fr; gap: 1rem; }
 
