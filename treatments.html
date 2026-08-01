@@ -3,34 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Treatments — danA Wellness Clinic</title>
-  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="favicon.png" type="image/png" />
+  <title>Treatments · danA Wellness Clinic</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FAF6F0'/%3E%3Ctext x='4' y='23' font-family='Georgia' font-size='18' fill='%232A2721'%3Ed%3C/text%3E%3Ctext x='14' y='23' font-family='Georgia' font-weight='700' font-size='21' fill='%234A6741'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
   <!-- HEADER -->
-  <header class="dana-header">
-    <a href="index.html" class="dana-logo"><span class="lc">dan</span><span class="cap">A</span></a>
-    <nav class="dana-nav" id="mainNav">
-      <a href="index.html">Home</a>
-      <a href="treatments.html" class="active">Treatments</a>
-      <a href="book.html">Book Appointment</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div style="display:flex;align-items:center;gap:1rem">
-      <a href="book.html" class="dana-btn filled small">Book Now</a>
-      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('mainNav').classList.toggle('open')">
-        <span></span><span></span><span></span>
-      </button>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">dan<span class="logo-a">A</span></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="treatments.html" class="active">Treatments</a>
+        <a href="book.html">Book Appointment</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <a href="book.html" class="dana-btn header-cta">BOOK NOW</a>
+      <button class="hamburger" aria-label="Menu">☰</button>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="page-hero" style="padding-bottom:0">
     <div class="eyebrow" style="justify-content:center">
-      Treatments
-      <span class="kr-inline"><span class="dot">·</span>시술</span>
+      Treatments<span class="kr-inline"><span class="dot">·</span>시술</span>
     </div>
     <h1>Wellness &amp; Aesthetics,<br>Personalized</h1>
     <p class="sub">Each treatment is personalized to the individual — browse by category below.</p>
@@ -39,67 +36,107 @@
   <!-- TABS -->
   <section class="wrap" style="padding-top:3rem">
     <div class="tabs">
-      <button class="tab-btn offers active" onclick="switchTab('tab-offers',this)">Special Offers</button>
-      <button class="tab-btn" onclick="switchTab('tab-wellness',this)">Wellness</button>
-      <button class="tab-btn" onclick="switchTab('tab-aesthetics',this)">Aesthetics</button>
-      <button class="tab-btn" onclick="switchTab('tab-signature',this)">Signature Skin Packages</button>
+      <button class="tab-btn offers active" data-tab="tab-offers">Special Offers</button>
+      <button class="tab-btn" data-tab="tab-iv-lounge">IV Lounge</button>
+      <button class="tab-btn" data-tab="tab-wellness-program">Signature Wellness Program</button>
+      <button class="tab-btn" data-tab="tab-aesthetics">Aesthetics</button>
+      <button class="tab-btn" data-tab="tab-signature">Signature Skin Packages</button>
     </div>
 
-    <!-- ═══ OFFERS TAB ═══ -->
-    <div id="tab-offers" class="tab-panel active">
-      <div class="offer-card glass">
-        <span class="tag">Limited Time</span>
-        <h3>Botox Bank (Xeomin)</h3>
-        <p style="margin:0 0 1.2rem">Share your Botox with up to two family members or friends.</p>
-        <div class="card-grid cols-3" style="margin-bottom:0">
-          <div class="tcard glass">
-            <h4 style="margin:0 0 0.4rem;font-family:'Cormorant Garamond', serif;font-size:1.2rem">100 Units</h4>
-            <div class="offer-price"><span class="was">$1,400</span><span class="now">$900</span></div>
-          </div>
-          <div class="tcard glass">
-            <h4 style="margin:0 0 0.4rem;font-family:'Cormorant Garamond', serif;font-size:1.2rem">200 Units</h4>
-            <div class="offer-price"><span class="was">$2,800</span><span class="now">$1,600</span></div>
-          </div>
-          <div class="tcard glass">
-            <h4 style="margin:0 0 0.4rem;font-family:'Cormorant Garamond', serif;font-size:1.2rem">300 Units</h4>
-            <div class="offer-price"><span class="was">$4,000</span><span class="now">$2,100</span></div>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SPECIAL OFFERS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="tab-panel active" id="tab-offers">
+      <details class="dana-details glass">
+        <summary class="dana-summary"><span>Botox Bank (Xeomin) <span class="badge">LIMITED TIME</span></span><span class="plus">+</span></summary>
+        <div class="item-body">
+          <p>Pre-purchase 50 units of Xeomin at a discounted rate and use them at your convenience.</p>
+          <div class="cols">
+            <div>
+              <h4>Package</h4>
+              <ul><li>50 units Xeomin — <strong>$499</strong> (reg. $550+)</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul>
+                <li>Lock in a lower per-unit price</li>
+                <li>Flexible scheduling</li>
+                <li>Perfect for maintenance patients</li>
+              </ul>
+            </div>
           </div>
         </div>
-        <a href="book.html" class="dana-btn small" style="margin-top:1.4rem">Book Now</a>
-      </div>
-
-      <div class="offer-card glass">
-        <h3>IV Therapy Package</h3>
-        <div class="offer-price"><span class="now">$1,490</span></div>
-        <p style="margin:0 0 0.6rem">Choose 5 IV treatments, excluding NAD+. Share your treatments with up to two family members or friends.</p>
-        <div style="margin:0 0 1.4rem;padding:0.75rem 1rem;background:rgba(255,192,103,0.15);border:1px solid var(--gold);border-radius:8px">
-          <p style="margin:0;font-weight:400;color:var(--ink)">✨ Complimentary facial hydro treatment with all IV therapies</p>
+      </details>
+      <details class="dana-details glass">
+        <summary class="dana-summary"><span>IV Therapy Package <span class="badge">LIMITED TIME</span></span><span class="plus">+</span></summary>
+        <div class="item-body">
+          <p>Commit to your wellness with a multi-session IV package at a special rate.</p>
+          <div class="cols">
+            <div>
+              <h4>Package</h4>
+              <ul><li>4 IV Sessions — <strong>$999</strong> (save $200+)</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul>
+                <li>Choose from any standard IV formula</li>
+                <li>Sessions valid for 6 months</li>
+                <li>Complimentary wellness consultation included</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <a href="book.html" class="dana-btn small">Book Now</a>
-      </div>
-
-      <div class="offer-card glass">
-        <span class="tag">Limited to 30 Patients</span>
-        <h3>Welcome Special</h3>
-        <div class="offer-price"><span class="now">$1,990</span></div>
-        <p style="margin:0 0 0.6rem">Oligio 600 shots + Rejuran Skin Booster + Beauty Glow IV Therapy — OR — 20 units of Botox.</p>
-        <ul style="margin:0 0 1.4rem;padding-left:1.2rem;color:var(--ink-soft)"><li>Limited to the first 30 patients</li></ul>
-        <a href="book.html" class="dana-btn small">Book Now</a>
-      </div>
+      </details>
+      <details class="dana-details glass">
+        <summary class="dana-summary"><span>Welcome Special <span class="badge">NEW PATIENT</span></span><span class="plus">+</span></summary>
+        <div class="item-body">
+          <p>First-time patients receive a complimentary consultation and 15% off their first treatment.</p>
+          <div class="cols">
+            <div>
+              <h4>Includes</h4>
+              <ul>
+                <li>Free initial consultation</li>
+                <li>15% off first treatment</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Applies To</h4>
+              <ul>
+                <li>Any IV therapy</li>
+                <li>Any injectable treatment</li>
+                <li>Signature skin protocols</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </details>
     </div>
 
-    <!-- ═══ WELLNESS TAB ═══ -->
-    <div id="tab-wellness" class="tab-panel">
-      <div class="group-title">IV Lounge</div>
-      <p class="group-sub">Discover personalized IV therapies designed to help you feel refreshed, energized, and at your best.</p>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- IV LOUNGE -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-iv-lounge">
+      <!-- Hero image -->
+      <div class="glass" style="overflow:hidden;border-radius:22px;position:relative;margin-bottom:2.5rem;aspect-ratio:16/7">
+        <img src="images/iv-lounge.webp" alt="Two patients relaxing in lounge chairs receiving IV therapy in a bright, plant-filled room" style="width:100%;height:100%;object-fit:cover;display:block" />
+        <div class="tint"></div>
+      </div>
+
+      <p class="group-sub">Discover personalized IV therapies designed to help you feel refreshed, energized, and at your best. Each treatment is carefully formulated with premium vitamins, minerals, antioxidants, and hydration to support your overall wellness.</p>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>✨ Beauty Glow IV <span class="price">$349</span></span><span class="plus">+</span></summary>
         <div class="item-body">
           <p>Radiance starts from within. Hydrate your body while nourishing your skin, hair, and nails with beauty-enhancing vitamins and powerful antioxidants.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>Vitamin C</li><li>B Complex</li><li>Biotin</li><li>Glutathione</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Promotes healthy, radiant skin</li><li>Supports stronger hair and nails</li><li>Powerful antioxidant support</li><li>Deep hydration</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>Vitamin C</li><li>B Complex</li><li>Biotin</li><li>Glutathione</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Promotes healthy, radiant skin</li><li>Supports stronger hair and nails</li><li>Powerful antioxidant support</li><li>Deep hydration</li><li>Helps protect against oxidative stress</li></ul>
+            </div>
           </div>
         </div>
       </details>
@@ -107,10 +144,16 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>🌿 Wellness Boost IV <span class="price">$349</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Feel your best, every day. Support your body's natural defenses with essential vitamins, minerals, and hydration.</p>
+          <p>Feel your best, every day. Support your body's natural defenses with essential vitamins, minerals, and hydration designed to help you stay energized and well.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>Vitamin C</li><li>B Complex</li><li>Zinc</li><li>Vitamin B12</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Supports immune health</li><li>Boosts energy naturally</li><li>Restores hydration</li><li>Promotes overall wellness</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>Vitamin C</li><li>B Complex</li><li>Zinc</li><li>Vitamin B12</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Supports immune health</li><li>Helps strengthen your body's natural defenses</li><li>Boosts energy naturally</li><li>Restores hydration</li><li>Replenishes essential vitamins and electrolytes</li><li>Promotes overall wellness</li></ul>
+            </div>
           </div>
         </div>
       </details>
@@ -118,10 +161,16 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>✈️ Jet Lag Recovery IV <span class="price">$349</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Recharge after every journey. Recover from travel faster with a revitalizing blend of hydration, vitamins, and minerals.</p>
+          <p>Recharge after every journey. Recover from travel faster with a revitalizing blend of hydration, vitamins, and minerals to help you adjust and feel refreshed.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>Vitamin C</li><li>B Complex</li><li>Zinc</li><li>Magnesium</li><li>Vitamin B12</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Restores hydration</li><li>Helps reduce travel fatigue</li><li>Supports energy production</li><li>Replenishes electrolytes</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>Vitamin C</li><li>B Complex</li><li>Zinc</li><li>Magnesium</li><li>Vitamin B12</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Restores hydration</li><li>Helps reduce travel fatigue</li><li>Supports energy production</li><li>Replenishes electrolytes and essential nutrients</li><li>Helps you feel refreshed and recharged</li></ul>
+            </div>
           </div>
         </div>
       </details>
@@ -129,21 +178,34 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>🥂 Hangover Recovery IV <span class="price">$349</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Recover. Rehydrate. Refresh. Bounce back after a night out with a customized blend of fluids, vitamins, and electrolytes.</p>
+          <p>Recover. Rehydrate. Refresh. Bounce back after a night out with a customized blend of fluids, vitamins, and electrolytes that helps restore hydration and support recovery.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>B Complex</li><li>Electrolytes</li><li>Zofran (when clinically appropriate)</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Restores hydration</li><li>Replenishes electrolytes</li><li>Helps reduce nausea*</li><li>Boosts energy naturally</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>B Complex</li><li>Electrolytes</li><li>Zofran (Ondansetron) — when clinically appropriate</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Restores hydration</li><li>Replenishes electrolytes</li><li>Helps reduce nausea*</li><li>Boosts energy naturally</li><li>Supports recovery and overall wellness</li></ul>
+            </div>
           </div>
+          <p style="margin-top:0.8rem;font-size:0.8rem;color:var(--ink-soft)">*When clinically appropriate, as determined by our medical team.</p>
         </div>
       </details>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>💙 Myers' Cocktail IV <span class="price">$249</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>A classic wellness infusion designed to help restore hydration and support overall vitality.</p>
+          <p>A classic wellness infusion designed to help restore hydration, replenish essential vitamins and minerals, and support overall vitality.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>Vitamin C</li><li>B Complex</li><li>Magnesium</li><li>Calcium</li><li>Zinc</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Supports hydration</li><li>Replenishes essential vitamins</li><li>Helps reduce fatigue</li><li>Supports immune wellness</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>Vitamin C</li><li>B Complex</li><li>Magnesium</li><li>Calcium</li><li>Zinc</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Supports hydration</li><li>Replenishes essential vitamins and minerals</li><li>Helps reduce fatigue and promote recovery</li><li>Supports immune and overall wellness</li></ul>
+            </div>
           </div>
         </div>
       </details>
@@ -151,10 +213,16 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>⚡ NAD+ IV Therapy <span class="price">$590 / $1,190</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Cellular renewal for energy, focus &amp; longevity. Support your body's natural energy systems with NAD+.</p>
+          <p>Cellular renewal for energy, focus &amp; longevity. Support your body's natural energy systems with NAD+, a powerful coenzyme involved in cellular energy production, brain wellness, and healthy aging.</p>
           <div class="cols">
-            <div><h4>Includes</h4><ul><li>NAD+ (500 mg or 1,000 mg)</li></ul></div>
-            <div><h4>Benefits</h4><ul><li>Supports cellular energy</li><li>Promotes mental clarity</li><li>Supports healthy aging</li><li>Promotes overall vitality</li></ul></div>
+            <div>
+              <h4>Includes</h4>
+              <ul><li>NAD+ (500 mg or 1,000 mg)</li></ul>
+            </div>
+            <div>
+              <h4>Benefits</h4>
+              <ul><li>Supports cellular energy production</li><li>Promotes mental clarity and focus</li><li>Supports memory and cognitive wellness</li><li>Supports healthy aging</li><li>Promotes overall vitality and wellness</li></ul>
+            </div>
           </div>
         </div>
       </details>
@@ -162,7 +230,7 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>⚖️ GLP-1 Microdosing <span class="price">Personalized</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>A personalized approach to healthy weight management using lower, customized doses.</p>
+          <p>A personalized approach to healthy weight management. GLP-1 microdosing uses lower, customized doses to help manage appetite and support sustainable weight loss while minimizing side effects.</p>
           <ul><li>Helps manage appetite</li><li>Supports healthy, sustainable weight loss</li><li>May reduce common side effects</li><li>Personalized treatment plans</li><li>Ongoing medical supervision</li></ul>
         </div>
       </details>
@@ -170,126 +238,161 @@
       <details class="dana-details glass">
         <summary class="dana-summary"><span>💉 Vitamin Injections</span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Quick wellness boosts tailored to your needs.</p>
+          <p>Quick wellness boosts tailored to your needs — targeted vitamin injections that provide convenient nutritional support.</p>
           <ul>
-            <li><strong>Vitamin B12 — $30</strong> · Supports energy production</li>
-            <li><strong>Vitamin D3 — $30</strong> · Supports bone health and immune health</li>
-            <li><strong>Glutathione — $50</strong> · Supports healthy skin and cellular wellness</li>
+            <li><strong>Vitamin B12 — $30</strong> · Supports energy production, metabolism, and overall wellness</li>
+            <li><strong>Vitamin D3 — $30</strong> · Supports bone health, muscle function, and immune health</li>
+            <li><strong>Glutathione — $50</strong> · A powerful antioxidant that supports healthy skin and cellular wellness</li>
             <li><strong>Biotin — $50</strong> · Promotes healthy hair, skin, and nails</li>
           </ul>
         </div>
       </details>
+    </div>
 
-      <div class="group-title" style="margin-top:2.5rem">Signature Wellness Program</div>
-      <p class="group-sub">Every wellness journey begins with a personalized consultation. Our Signature Wellness Programs are tailored to your unique health goals.</p>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SIGNATURE WELLNESS PROGRAM -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-wellness-program">
+      <p class="group-sub" style="margin-bottom:2rem">Every wellness journey begins with a personalized consultation. Our Signature Wellness Programs are tailored to your unique health goals — combining advanced therapies, medical supervision, and ongoing support to help you feel your best.</p>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>🔬 Longevity &amp; Performance</span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Designed for those seeking to optimize energy, mental clarity, and long-term vitality.</p>
-          <h4>Ingredients</h4>
-          <ul><li>NAD+</li><li>Sermorelin</li><li>Glutathione</li><li>Vitamin C</li><li>B-Complex</li><li>Vitamin D3</li><li>CoQ10</li><li>Alpha-Lipoic Acid</li></ul>
+          <p>Designed for those seeking to optimize energy, mental clarity, and long-term vitality. This program supports cellular health, recovery, and peak performance through science-backed therapies.</p>
+          <details class="dana-details glass nested">
+            <summary class="dana-summary"><span>View Ingredients</span><span class="plus">+</span></summary>
+            <div class="item-body">
+              <ul><li>NAD+</li><li>Sermorelin</li><li>Glutathione</li><li>Vitamin C</li><li>B-Complex</li><li>Vitamin D3</li><li>CoQ10</li><li>Alpha-Lipoic Acid</li></ul>
+            </div>
+          </details>
         </div>
       </details>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>🧬 Men's Wellness</span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>A targeted program to help men maintain energy, vitality, and hormonal balance.</p>
-          <h4>Ingredients</h4>
-          <ul><li>Testosterone Cypionate</li><li>Gonadorelin</li><li>Sermorelin</li><li>NAD+</li><li>B-Complex</li></ul>
+          <p>A targeted program to help men maintain energy, vitality, and hormonal balance. Combines hormone optimization with advanced nutrient support for sustained well-being.</p>
+          <details class="dana-details glass nested">
+            <summary class="dana-summary"><span>View Ingredients</span><span class="plus">+</span></summary>
+            <div class="item-body">
+              <ul><li>Testosterone Cypionate</li><li>Gonadorelin</li><li>Sermorelin</li><li>NAD+</li><li>B-Complex</li></ul>
+            </div>
+          </details>
         </div>
       </details>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>🌸 Women's Wellness</span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Holistic support for women at every stage of life focusing on hormonal harmony and cellular renewal.</p>
-          <h4>Ingredients</h4>
-          <ul><li>Semaglutide</li><li>Tirzepatide</li><li>B12 / B-Complex</li><li>NAD+</li><li>Glutathione</li><li>Vitamin C</li></ul>
+          <p>Holistic support for women at every stage of life. This program focuses on hormonal harmony, metabolic health, and cellular renewal with personalized therapies.</p>
+          <details class="dana-details glass nested">
+            <summary class="dana-summary"><span>View Ingredients</span><span class="plus">+</span></summary>
+            <div class="item-body">
+              <ul><li>Semaglutide</li><li>Tirzepatide</li><li>B12 / B-Complex</li><li>NAD+</li><li>Glutathione</li><li>Vitamin C</li></ul>
+            </div>
+          </details>
         </div>
       </details>
 
       <details class="dana-details glass">
         <summary class="dana-summary"><span>⚖️ Weight Management</span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>A medically-supervised program designed for sustainable, healthy weight loss.</p>
-          <h4>Ingredients</h4>
-          <ul><li>Semaglutide + B12</li><li>Tirzepatide + Niacinamide</li><li>Lipo-C</li><li>Lipo-B</li><li>L-Carnitine</li><li>GLP-1 Microdosing</li></ul>
+          <p>A medically-supervised program designed for sustainable, healthy weight loss. Combines GLP-1 therapies with targeted nutrients to support metabolism, appetite management, and long-term results.</p>
+          <details class="dana-details glass nested">
+            <summary class="dana-summary"><span>View Ingredients</span><span class="plus">+</span></summary>
+            <div class="item-body">
+              <ul><li>Semaglutide + B12</li><li>Tirzepatide + Niacinamide</li><li>Lipo-C</li><li>Lipo-B</li><li>L-Carnitine</li><li>GLP-1 Microdosing</li></ul>
+            </div>
+          </details>
         </div>
       </details>
     </div>
 
-    <!-- ═══ AESTHETICS TAB ═══ -->
-    <div id="tab-aesthetics" class="tab-panel">
-      <div class="group-title">Injectables &amp; Regenerative Treatments</div>
-      <div style="margin-bottom:1.6rem;padding:1rem 1.4rem;font-size:0.85rem;color:var(--ink-soft);font-style:italic;background:rgba(255,192,103,0.08);border-left:3px solid var(--gold);border-radius:6px">
-        Each treatment is thoughtfully tailored to your individual skin needs. Pricing may slightly vary based on skin condition and supplies required. Final pricing will be determined during your personalized consultation.
-      </div>
-      <div class="card-grid">
-        <div class="tcard glass"><h3 style="margin:0 0 0.5rem;font-size:1.2rem">Neurotoxins</h3><p style="margin:0;color:var(--ink-soft)">Botox · Letybo · Xeomin</p></div>
-        <div class="tcard glass"><h3 style="margin:0 0 0.5rem;font-size:1.2rem">Dermal Fillers / Collagen Stimulators</h3><p style="margin:0;color:var(--ink-soft)">Juvéderm · Restylane · Radiesse · Sculptra</p></div>
-        <div class="tcard glass"><h3 style="margin:0 0 0.5rem;font-size:1.2rem">Skin Boosters</h3><p style="margin:0;color:var(--ink-soft)">Skinvive · Exosomes · Rejuran · PRP/PRF · NAD+ · Glutathione · ECM</p></div>
-        <div class="tcard glass"><h3 style="margin:0 0 0.5rem;font-size:1.2rem">Other Treatments</h3><p style="margin:0;color:var(--ink-soft)">RF Microneedling · Acne Scar Treatment · Hair Restoration (PRP, Exosomes)</p></div>
-      </div>
-
-      <div class="group-title">Skin Tightening &amp; Lifting</div>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- AESTHETICS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-aesthetics">
+      <h3 class="group-title">Injectables</h3>
+      <p class="group-sub">Natural-looking results — expertly placed to soften, smooth, and refresh.</p>
 
       <details class="dana-details glass">
-        <summary class="dana-summary"><span>Oligio RF Skin Tightening &amp; Lifting</span><span class="plus">+</span></summary>
+        <summary class="dana-summary"><span>Xeomin (Botulinum Toxin) <span class="price">$11/unit</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>A non-invasive skin tightening and contouring treatment originating from South Korea that utilizes Monopolar Radiofrequency (RF) energy. By delivering targeted heat into the dermal and subcutaneous layers, it stimulates collagen production and tightens sagging skin without surgery or downtime.</p>
+          <p>A purified neurotoxin that gently relaxes targeted muscles to smooth fine lines and wrinkles for a refreshed, natural appearance.</p>
+          <div class="cols">
+            <div><h4>Common Areas</h4><ul><li>Forehead lines</li><li>Frown lines (11s)</li><li>Crow's feet</li></ul></div>
+            <div><h4>Details</h4><ul><li>Results in 3–5 days</li><li>Lasts 3–4 months</li><li>No downtime</li></ul></div>
+          </div>
         </div>
       </details>
 
       <details class="dana-details glass">
-        <summary class="dana-summary"><span>Dermotoxin</span><span class="plus">+</span></summary>
+        <summary class="dana-summary"><span>Dermal Fillers <span class="price">from $650/syringe</span></span><span class="plus">+</span></summary>
         <div class="item-body">
-          <p>Injecting small amounts of Botox into the dermis. It provides effective results for wrinkles, elasticity, pores, sebum, and skin lift.</p>
+          <p>Hyaluronic acid-based fillers that restore volume, smooth lines, and enhance facial contours for a naturally youthful look.</p>
+          <div class="cols">
+            <div><h4>Common Areas</h4><ul><li>Lips</li><li>Cheeks</li><li>Nasolabial folds</li><li>Jawline</li><li>Under eyes</li></ul></div>
+            <div><h4>Details</h4><ul><li>Immediate results</li><li>Lasts 6–18 months</li><li>Minimal downtime</li></ul></div>
+          </div>
+        </div>
+      </details>
+
+      <h3 class="group-title" style="margin-top:3rem">Advanced Treatments</h3>
+      <p class="group-sub">Next-generation technology for skin tightening, rejuvenation, and transformation.</p>
+
+      <details class="dana-details glass">
+        <summary class="dana-summary"><span>Oligio RF Skin Tightening <span class="price">from $1,200</span></span><span class="plus">+</span></summary>
+        <div class="item-body">
+          <p>A non-invasive radiofrequency treatment that stimulates collagen production for firmer, tighter skin with no downtime.</p>
+          <div class="cols">
+            <div><h4>Common Areas</h4><ul><li>Face</li><li>Jawline &amp; neck</li><li>Under eyes</li><li>Body</li></ul></div>
+            <div><h4>Details</h4><ul><li>Single session</li><li>Results build over 2–3 months</li><li>Lasts 1–2 years</li><li>No downtime</li></ul></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="dana-details glass">
+        <summary class="dana-summary"><span>Dermotoxin <span class="price">from $600</span></span><span class="plus">+</span></summary>
+        <div class="item-body">
+          <p>Micro-injections of diluted toxin across the skin surface to reduce pore size, control oil, and create a smooth, glass-skin effect.</p>
+          <div class="cols">
+            <div><h4>Benefits</h4><ul><li>Smoother skin texture</li><li>Reduced pore size</li><li>Less oil production</li><li>Glass-skin finish</li></ul></div>
+            <div><h4>Details</h4><ul><li>Results in 1–2 weeks</li><li>Lasts 3–4 months</li><li>No downtime</li></ul></div>
+          </div>
         </div>
       </details>
     </div>
 
-    <!-- ═══ SIGNATURE TAB ═══ -->
-    <div id="tab-signature" class="tab-panel">
-      <p class="group-sub" style="margin-bottom:2.4rem">Our signature skin longevity protocols, from a focused reset to a fully integrated regenerative treatment.</p>
-
-      <div class="sig-card glass">
-        <div class="sig-text">
-          <div class="sig-head"><h3>The Prelude</h3><span class="sig-price">$390+</span></div>
-          <p>A significant skin longevity treatment featuring medical microneedling or precision injectable delivery of advanced skin boosters, including Rejuran PDRN, Peptide, Tone-Up Whitening Boosters, Exosomes, and other regenerative formulas.</p>
-          <p style="margin:0">Designed to restore radiance and support natural collagen renewal.</p>
+    <!-- ═══════════════════════════════════════════════════ -->
+    <!-- SIGNATURE SKIN LONGEVITY PROTOCOLS -->
+    <!-- ═══════════════════════════════════════════════════ -->
+    <div class="tab-panel" id="tab-signature">
+      <div class="signature-grid">
+        <div class="signature-card glass">
+          <img src="images/signature-prelude.png" alt="The Prelude facial treatment" class="signature-img" />
+          <h3>The Prelude</h3>
+          <p class="price">$390+</p>
+          <p>A refined introduction to medical-grade skincare — gentle yet effective treatments that lay the foundation for lasting skin health.</p>
         </div>
-        <img src="images/prelude-treatment.png" alt="Woman receiving facial cosmetic injection in clinic" />
-      </div>
-
-      <div class="sig-card glass">
-        <div class="sig-text">
-          <div class="sig-head"><h3>The Emergence</h3><span class="sig-price">$690+</span></div>
-          <p>An elevated regenerative skin longevity treatment featuring next-generation bioactive skin boosters, including Rejuran Healer (PN), NAD+, PRP/PRF, ECM Booster, and other advanced regenerative formulations.</p>
-          <p style="margin:0">Delivered through precision injectable techniques or medical microneedling, this treatment supports collagen remodeling, strengthens the skin's extracellular matrix, and improves elasticity, hydration, texture, and overall skin resilience.</p>
+        <div class="signature-card glass">
+          <img src="images/signature-emergence.png" alt="The Emergence facial treatment" class="signature-img" />
+          <h3>The Emergence</h3>
+          <p class="price">$690+</p>
+          <p>Intermediate protocols combining advanced technologies to address specific concerns — texture, tone, fine lines, and early signs of aging.</p>
         </div>
-        <img src="images/emergence-treatment.png" alt="Woman receiving advanced skincare treatment" />
-      </div>
-
-      <div class="sig-card glass">
-        <div class="sig-text">
-          <div class="sig-head"><h3>The Timeless</h3><span class="sig-price">$1,990+</span></div>
-          <p>The ultimate skin longevity experience. This signature comprehensive protocol combines our most advanced regenerative skin boosters with Oligio RF skin tightening to address every dimension of skin health.</p>
-          <p>Designed to support collagen remodeling, reinforce the skin's structural foundation, improve firmness and elasticity, restore deep hydration, and enhance natural radiance.</p>
-          <p style="margin:0">The Timeless offers a truly integrated approach to achieving healthy, resilient, and timeless skin.</p>
+        <div class="signature-card glass">
+          <img src="images/signature-timeless.png" alt="The Timeless facial treatment" class="signature-img" />
+          <h3>The Timeless</h3>
+          <p class="price">$1,990+</p>
+          <p>Our most comprehensive skin longevity experience — combining multiple modalities in a single session for transformative, lasting results.</p>
         </div>
-        <img src="images/timeless-treatment.png" alt="Woman receiving laser tightening device treatment on face" />
-      </div>
-
-      <div style="margin-top:2rem;padding:1rem 1.4rem;font-size:0.85rem;color:var(--ink-soft);font-style:italic;background:rgba(255,192,103,0.08);border-left:3px solid var(--gold);border-radius:6px">
-        Each treatment is thoughtfully tailored to your individual skin needs. Pricing may slightly vary based on skin condition and the supplies required. Final pricing will be determined during your personalized consultation.
       </div>
     </div>
+
   </section>
 
-  <!-- CTA -->
-  <section class="cta-band">
+  <!-- CTA BAND -->
+  <section class="cta-band" style="margin-top:3.5rem">
     <div class="wrap" style="padding:0">
       <h2>Not sure where to start?</h2>
       <p>Book a consultation and we'll build a plan around your skin and goals.</p>
@@ -298,57 +401,62 @@
   </section>
 
   <!-- FOOTER -->
-  <footer class="dana-footer">
-    <div class="wrap">
-      <div class="foot-grid">
-        <div>
-          <div class="foot-logo"><span class="lc">dan</span><span class="cap">A</span> Wellness Clinic</div>
-          <p class="foot-desc">Beauty and wellness, together. Personalized aesthetic and wellness care rooted in Korean skincare philosophy.</p>
-        </div>
-        <div class="foot-col">
-          <h5>Visit</h5>
-          <a href="index.html">Home</a>
-          <a href="treatments.html">Treatments</a>
-          <a href="book.html">Book Appointment</a>
-          <a href="contact.html">Contact</a>
-        </div>
-        <div class="foot-col">
-          <h5>Contact</h5>
-          <a href="mailto:info@danawellnessclinic.com">info@danawellnessclinic.com</a>
-          <a href="tel:+16502888467">(650) 288-8467 or (213) 408-2503</a>
-          <a href="contact.html">215 N San Mateo Dr, Fl 2 Ste 9, San Mateo, CA 94401</a>
-        </div>
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo footer-logo">dan<span class="logo-a">A</span></a>
+        <p class="footer-tagline">Where science meets soul.</p>
       </div>
-      <div class="foot-bottom">
-        <span>© 2025 danA Wellness Clinic.</span>
-        <span>단아하다 · graceful, refined, quietly elegant.</span>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <a href="index.html">Home</a>
+        <a href="treatments.html">Treatments</a>
+        <a href="book.html">Book Appointment</a>
+        <a href="contact.html">Contact</a>
       </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <p><a href="tel:+16502888467">(650) 288-8467</a></p>
+        <p><a href="tel:+12134082503">(213) 408-2503</a></p>
+        <p><a href="mailto:info@danawellnessclinic.com">info@danawellnessclinic.com</a></p>
+        <p>215 N San Mateo Dr, Fl 2 Ste 9<br>San Mateo, CA 94401</p>
+        <p class="hours">Tue – Sun, 11 am – 7 pm<br>or by appointment</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 danA Wellness Clinic. All rights reserved.</p>
     </div>
   </footer>
 
+  <!-- TAB SCRIPT -->
   <script>
-    function switchTab(id, btn) {
-      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      btn.classList.add('active');
-    }
+    // Tab switching
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+
     // Deep link support
-    (function() {
-      var hash = window.location.hash.replace('#', '');
-      if (hash) {
-        var panel = document.getElementById(hash);
-        if (panel && panel.classList.contains('tab-panel')) {
-          document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-          document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-          panel.classList.add('active');
-          var btns = document.querySelectorAll('.tab-btn');
-          var tabIds = ['tab-offers','tab-wellness','tab-aesthetics','tab-signature'];
-          var idx = tabIds.indexOf(hash);
-          if (idx >= 0) btns[idx].classList.add('active');
-        }
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const panel = document.getElementById(id);
+      if (panel && panel.classList.contains('tab-panel')) {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+        panel.classList.add('active');
+        document.querySelector(`[data-tab="${id}"]`).classList.add('active');
       }
-    })();
+    }
+
+    // Hamburger menu
+    document.querySelector('.hamburger').addEventListener('click', () => {
+      document.querySelector('.main-nav').classList.toggle('open');
+    });
   </script>
+
 </body>
 </html>
