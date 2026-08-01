@@ -837,14 +837,16 @@ details[open] .dana-summary .plus {
 ═══════════════════════════════════════════════════ */
 @media (max-width: 900px) {
   .book-card {
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    padding: 1.5rem !important;
-  }
-  .book-phone {
-    white-space: normal;
-    font-size: 1.3rem !important;
-  }
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  padding: 1.5rem !important;
+}
+.book-phone {
+  white-space: normal;
+  font-size: 1.3rem !important;
+  flex-basis: 100%;
+  margin-top: 0.8rem;
+}
   .dana-nav {
   position: fixed;
   top: 63px;
