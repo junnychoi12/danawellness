@@ -842,27 +842,27 @@ details[open] .dana-summary .plus {
     font-size: 1.3rem !important;
   }
   .dana-nav {
-    position: fixed;
-    top: 63px;
-    left: auto;
-    right: 0;
-    bottom: 0;
-    width: 30%;
-    min-width: 160px;
-    background: rgba(250, 246, 240, 0.97);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    backface-visibility: hidden;
-    z-index: 150;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 2.4rem 1.2rem;
-    gap: 1.6rem;
-    transform: translateX(100%);
-    transition: transform 0.3s ease;
-    box-shadow: -4px 0 20px rgba(0,0,0,0.08);
-  }
+  position: fixed;
+  top: 63px;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  width: 30%;
+  min-width: 160px;
+  background: var(--ivory);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  backface-visibility: hidden;
+  z-index: 150;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 2.4rem 1.2rem;
+  gap: 1.6rem;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+}
   .dana-nav.open {
     transform: translateX(0);
   }
