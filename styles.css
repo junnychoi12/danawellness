@@ -855,9 +855,9 @@ details[open] .dana-summary .plus {
   bottom: 0;
   width: 30%;
   min-width: 160px;
-  background: var(--ivory);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   backface-visibility: hidden;
   z-index: 150;
   flex-direction: column;
@@ -867,7 +867,7 @@ details[open] .dana-summary .plus {
   gap: 1.6rem;
   transform: translateX(100%);
   transition: transform 0.3s ease;
-  box-shadow: -4px 0 20px rgba(0,0,0,0.08);
+  box-shadow: -6px 0 24px rgba(42,39,33,0.15);
 }
   .dana-nav.open {
     transform: translateX(0);
