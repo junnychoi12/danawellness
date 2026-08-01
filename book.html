@@ -74,43 +74,50 @@
                 <input type="email" id="cb-email" style="background:#fff" />
               </div>
             </div>
-            <div class="field">
-              <label for="cb-treatment">Interested in (optional)</label>
-              <select id="cb-treatment" style="background:#fff">
-                <option value="">Select a treatment…</option>
-                <optgroup label="Special Offers">
-                  <option>Botox Bank (Xeomin)</option>
-                  <option>IV Therapy Package</option>
-                  <option>Welcome Special</option>
-                </optgroup>
-                <optgroup label="IV Lounge">
-                  <option>Beauty Glow IV</option>
-                  <option>Wellness Boost IV</option>
-                  <option>Jet Lag Recovery IV</option>
-                  <option>Hangover Recovery IV</option>
-                  <option>Myers' Cocktail IV</option>
-                  <option>NAD+ IV Therapy</option>
-                  <option>GLP-1 Microdosing</option>
-                  <option>Vitamin Injections</option>
-                </optgroup>
-                <optgroup label="Signature Wellness">
-                  <option>Longevity & Performance</option>
-                  <option>Men's Wellness</option>
-                  <option>Women's Wellness</option>
-                  <option>Weight Management</option>
-                </optgroup>
-                <optgroup label="Aesthetics">
-                  <option>Injectables & Regenerative</option>
-                  <option>Skin Tightening & Lifting</option>
-                </optgroup>
-                <optgroup label="Signature Skin">
-                  <option>The Prelude</option>
-                  <option>The Emergence</option>
-                  <option>The Timeless</option>
-                </optgroup>
-                <option>Not sure yet / Consultation</option>
-              </select>
+
+            <!-- FIXED DROPDOWN — position:relative wrapper + position:absolute list -->
+            <div class="field" style="position:relative">
+              <label>Interested in (optional)</label>
+              <div id="dropdownToggle" style="background:#fff;border:1px solid rgba(42,39,33,0.14);border-radius:12px;padding:0.85rem 1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:0.95rem;color:var(--ink-soft)">
+                <span id="dropdownLabel">Select a treatment…</span>
+                <span id="dropdownArrow" style="font-size:0.7rem;transition:transform 0.2s">▼</span>
+              </div>
+              <div id="dropdownList" style="display:none;position:absolute;top:100%;left:0;right:0;z-index:50;background:#fff;border:1px solid rgba(42,39,33,0.14);border-radius:12px;margin-top:0.3rem;max-height:260px;overflow-y:auto;padding:0.4rem 0;box-shadow:0 8px 24px rgba(42,39,33,0.12)">
+                <div style="padding:0.3rem 0.8rem 0.1rem;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep)">Special Offers</div>
+                <label class="dd-item"><input type="checkbox" value="Botox Bank (Xeomin)"> Botox Bank (Xeomin)</label>
+                <label class="dd-item"><input type="checkbox" value="IV Therapy Package"> IV Therapy Package</label>
+                <label class="dd-item"><input type="checkbox" value="Welcome Special"> Welcome Special</label>
+
+                <div style="padding:0.5rem 0.8rem 0.1rem;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep);border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem">IV Lounge</div>
+                <label class="dd-item"><input type="checkbox" value="Beauty Glow IV"> Beauty Glow IV</label>
+                <label class="dd-item"><input type="checkbox" value="Wellness Boost IV"> Wellness Boost IV</label>
+                <label class="dd-item"><input type="checkbox" value="Jet Lag Recovery IV"> Jet Lag Recovery IV</label>
+                <label class="dd-item"><input type="checkbox" value="Hangover Recovery IV"> Hangover Recovery IV</label>
+                <label class="dd-item"><input type="checkbox" value="Myers' Cocktail IV"> Myers' Cocktail IV</label>
+                <label class="dd-item"><input type="checkbox" value="NAD+ IV Therapy"> NAD+ IV Therapy</label>
+                <label class="dd-item"><input type="checkbox" value="GLP-1 Microdosing"> GLP-1 Microdosing</label>
+                <label class="dd-item"><input type="checkbox" value="Vitamin Injections"> Vitamin Injections</label>
+
+                <div style="padding:0.5rem 0.8rem 0.1rem;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep);border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem">Signature Wellness</div>
+                <label class="dd-item"><input type="checkbox" value="Longevity & Performance"> Longevity & Performance</label>
+                <label class="dd-item"><input type="checkbox" value="Men's Wellness"> Men's Wellness</label>
+                <label class="dd-item"><input type="checkbox" value="Women's Wellness"> Women's Wellness</label>
+                <label class="dd-item"><input type="checkbox" value="Weight Management"> Weight Management</label>
+
+                <div style="padding:0.5rem 0.8rem 0.1rem;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep);border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem">Aesthetics</div>
+                <label class="dd-item"><input type="checkbox" value="Injectables & Regenerative"> Injectables & Regenerative</label>
+                <label class="dd-item"><input type="checkbox" value="Skin Tightening & Lifting"> Skin Tightening & Lifting</label>
+
+                <div style="padding:0.5rem 0.8rem 0.1rem;font-size:0.68rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;color:var(--rose-deep);border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem">Signature Skin</div>
+                <label class="dd-item"><input type="checkbox" value="The Prelude"> The Prelude</label>
+                <label class="dd-item"><input type="checkbox" value="The Emergence"> The Emergence</label>
+                <label class="dd-item"><input type="checkbox" value="The Timeless"> The Timeless</label>
+
+                <div style="border-top:1px solid rgba(0,0,0,0.06);margin-top:0.2rem"></div>
+                <label class="dd-item"><input type="checkbox" value="Not sure yet / Consultation"> Not sure yet / Consultation</label>
+              </div>
             </div>
+
             <button type="submit" class="dana-btn filled" style="width:100%;justify-content:center;margin-top:0.5rem">Request Callback</button>
           </form>
         </div>
@@ -168,17 +175,79 @@
     </div>
   </footer>
 
+  <style>
+    .dd-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.35rem 0.8rem;
+      cursor: pointer;
+      font-size: 0.88rem;
+      color: var(--ink);
+      transition: background 0.15s;
+    }
+    .dd-item:hover {
+      background: rgba(74,103,65,0.06);
+    }
+    .dd-item input[type="checkbox"] {
+      accent-color: var(--rose-deep);
+      width: 14px;
+      height: 14px;
+      margin: 0;
+      flex-shrink: 0;
+    }
+  </style>
+
   <script>
-    document.getElementById('callbackForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      var name = document.getElementById('cb-name').value;
-      var phone = document.getElementById('cb-phone').value;
-      var email = document.getElementById('cb-email').value;
-      var treatment = document.getElementById('cb-treatment').value || 'Not specified';
-      var subject = encodeURIComponent('Callback Request — danA Wellness Clinic');
-      var body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + treatment + '\n\nPlease call me back to schedule an appointment.');
-      window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
-    });
+    (function() {
+      var toggle = document.getElementById('dropdownToggle');
+      var list = document.getElementById('dropdownList');
+      var label = document.getElementById('dropdownLabel');
+      var arrow = document.getElementById('dropdownArrow');
+      var open = false;
+
+      toggle.addEventListener('click', function() {
+        open = !open;
+        list.style.display = open ? 'block' : 'none';
+        arrow.style.transform = open ? 'rotate(180deg)' : 'none';
+      });
+
+      // Close when clicking outside
+      document.addEventListener('click', function(e) {
+        if (!toggle.contains(e.target) && !list.contains(e.target)) {
+          open = false;
+          list.style.display = 'none';
+          arrow.style.transform = 'none';
+        }
+      });
+
+      // Update label on checkbox change
+      list.addEventListener('change', function() {
+        var checked = list.querySelectorAll('input[type="checkbox"]:checked');
+        if (checked.length === 0) {
+          label.textContent = 'Select a treatment…';
+          label.style.color = 'var(--ink-soft)';
+        } else {
+          label.textContent = checked.length + ' treatment' + (checked.length > 1 ? 's' : '') + ' selected';
+          label.style.color = 'var(--ink)';
+        }
+      });
+
+      // Form submit
+      document.getElementById('callbackForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('cb-name').value;
+        var phone = document.getElementById('cb-phone').value;
+        var email = document.getElementById('cb-email').value;
+        var checked = list.querySelectorAll('input[type="checkbox"]:checked');
+        var treatments = [];
+        checked.forEach(function(cb) { treatments.push(cb.value); });
+        var treatmentStr = treatments.length ? treatments.join(', ') : 'Not specified';
+        var subject = encodeURIComponent('Callback Request — danA Wellness Clinic');
+        var body = encodeURIComponent('Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + treatmentStr + '\n\nPlease call me back to schedule an appointment.');
+        window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
+      });
+    })();
   </script>
 </body>
 </html>
