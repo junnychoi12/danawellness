@@ -145,3 +145,6 @@
 .sig-card img{max-width:200px}
 .foot-grid{grid-template-columns:1fr;gap:2rem}
 }
+.dd-item{display:flex;align-items:center;gap:0.5rem;padding:0.4rem 0.6rem;cursor:pointer;font-size:0.85rem;color:var(--ink);text-transform:none;letter-spacing:normal;flex-wrap:nowrap}
+.dd-item:hover{background:rgba(74,103,65,0.06)}
+.dd-item input[type="checkbox"]{accent-color:var(--rose-deep);flex-shrink:0;margin:0;width:16px;height:16px;min-width:16px}
