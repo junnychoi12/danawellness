@@ -625,7 +625,7 @@ details[open] .dana-summary .plus {
   padding: 2rem 2.4rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .sig-head {
   display: flex;
