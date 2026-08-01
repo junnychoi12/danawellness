@@ -417,6 +417,15 @@ details[open] .dana-summary .plus { transform: rotate(45deg); }
   color: var(--rose-deep);
 }
 .sig-card p { color: var(--ink-soft); font-size: 0.9rem; line-height: 1.7; margin-bottom: 1rem; }
+/* Signature cards — equal height */
+.sig-card[style*="grid-template-columns"] {
+  min-height: 320px;
+}
+.sig-card[style*="grid-template-columns"] > div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 /* ═══════════════════════════════════════════════
    BOOK PAGE
