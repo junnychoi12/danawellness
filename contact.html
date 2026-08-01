@@ -12,15 +12,18 @@
   <!-- HEADER -->
   <header class="dana-header">
     <a href="index.html" class="dana-logo"><span class="lc">d</span><span style="font-size:1.15em">an</span><span class="cap">A</span></a>
-    <button class="nav-toggle" onclick="document.querySelector('.dana-nav').classList.toggle('open')" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
     <nav class="dana-nav">
       <a href="index.html">Home</a>
       <a href="treatments.html">Treatments</a>
       <a href="book.html">Book</a>
       <a href="contact.html" class="active">Contact</a>
     </nav>
+    <div style="display:flex;align-items:center;gap:1rem">
+      <a href="book.html" class="dana-btn filled small">Book Now</a>
+      <button class="nav-toggle" onclick="document.querySelector('.dana-nav').classList.toggle('open')" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </header>
 
   <!-- HERO -->
