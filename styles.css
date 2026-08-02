@@ -856,8 +856,8 @@ details[open] .dana-summary .plus {
   width: 30%;
   min-width: 160px;
   background: rgba(255, 253, 249, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   backface-visibility: hidden;
   z-index: 150;
   flex-direction: column;
