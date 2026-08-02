@@ -395,7 +395,7 @@
 </div>
 </footer>
 
-  <script>
+<script>
 document.querySelectorAll('.tab-btn').forEach(function(btn) {
   btn.addEventListener('click', function() {
     document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
@@ -404,7 +404,6 @@ document.querySelectorAll('.tab-btn').forEach(function(btn) {
     document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
   });
 });
-
 if (window.location.hash) {
   var id = window.location.hash.replace('#', '');
   var panel = document.getElementById(id);
@@ -416,7 +415,7 @@ if (window.location.hash) {
     if (targetBtn) targetBtn.classList.add('active');
   }
 }
-
+</script>
 <script>
 document.addEventListener('click', function(e) {
   var nav = document.getElementById('mainNav');
