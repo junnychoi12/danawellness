@@ -852,7 +852,7 @@ details[open] .dana-summary .plus {
   top: 63px;
   left: auto;
   right: 0;
-  bottom: 0;
+  height: calc(100vh - 63px);
   width: 30%;
   min-width: 160px;
   background: rgba(255, 253, 249, 0.92);
