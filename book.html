@@ -357,5 +357,14 @@ cursor: pointer;
     }
   </style>
 
+<script>
+document.addEventListener('click', function(e) {
+  var nav = document.getElementById('mainNav');
+  var toggle = document.querySelector('.nav-toggle');
+  if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+    nav.classList.remove('open');
+  }
+});
+</script>
 </body>
 </html>
