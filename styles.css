@@ -680,6 +680,15 @@ details[open] .dana-summary .plus {
   margin: 0 auto;
   padding: 2.8rem 3.4rem;
 }
+/* Honeypot — visually removed but still present for bots to fill */
+.hp-field {
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 .field {
   margin-bottom: 1.5rem;
 }
