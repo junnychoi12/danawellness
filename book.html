@@ -79,6 +79,12 @@
     </div>
     <p style="font-size:0.88rem;color:var(--ink-soft);margin:0.4rem 0 1.2rem;">Leave your info and we'll call you back</p>
     <form id="callbackForm">
+            <!-- Honeypot: hidden from humans, bots tend to fill it. Do not remove. -->
+            <div class="hp-field" aria-hidden="true">
+              <label for="cb-company">Company</label>
+              <input type="text" id="cb-company" name="company" tabindex="-1" autocomplete="off" />
+            </div>
+
             <!-- Full Name -->
             <div class="field">
               <label for="cb-name">Full Name</label>
@@ -146,7 +152,7 @@
           </form>
 
           <div id="confirmMsg" style="display:none;border-left:2px solid var(--sage);padding:0.8rem 1rem;margin-top:0.8rem;font-size:0.82rem;border-radius:10px;background:rgba(150,167,141,0.12);">
-            Thank you! Your email client should be open with your request. If not, email us at <a href="mailto:info@danawellnessclinic.com" style="color:var(--rose-deep)">info@danawellnessclinic.com</a>.
+            Thank you! We've received your request and will call you back soon. For anything urgent, reach us at <a href="mailto:info@danawellnessclinic.com" style="color:var(--rose-deep)">info@danawellnessclinic.com</a>.
           </div>
         </div>
       </div>
@@ -239,23 +245,60 @@
       }
     });
 
-    // --- Form Submit (opens mailto) ---
+    // --- Form Submit (sends to Google Sheet via Apps Script) ---
+    // Deployed Apps Script Web App endpoint. See GOOGLE_SHEET_SETUP.md to redeploy/update.
+    const CALLBACK_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyDhYD1_TxHOmYmoRdKJJ40dIt0qdXvp8p6wOIrxK6W5gS-uHbYjpdij-9j73QheE-i/exec';
+
     document.getElementById('callbackForm').addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('cb-name').value;
-      const phone = document.getElementById('cb-phone').value;
-      const email = document.getElementById('cb-email').value;
+      const form = document.getElementById('callbackForm');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const confirmMsg = document.getElementById('confirmMsg');
+
+      const name = document.getElementById('cb-name').value.trim();
+      const phone = document.getElementById('cb-phone').value.trim();
+      const email = document.getElementById('cb-email').value.trim();
+      const company = document.getElementById('cb-company').value.trim(); // honeypot
       const checked = list.querySelectorAll('input[type="checkbox"]:checked');
       const treatments = checked.length
         ? Array.from(checked).map(c => c.value).join(', ')
         : 'Not specified';
 
-      const subject = encodeURIComponent('Callback Request — danA Wellness Clinic');
-      const body = encodeURIComponent(
-        'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + treatments + '\n\nPlease call me back to schedule an appointment.'
-      );
-      window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
-      document.getElementById('confirmMsg').style.display = 'block';
+      // Build a "simple" form-encoded request to avoid a CORS preflight.
+      const params = new URLSearchParams();
+      params.append('name', name);
+      params.append('phone', phone);
+      params.append('email', email);
+      params.append('treatments', treatments);
+      params.append('company', company); // honeypot — server drops the row if filled
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(CALLBACK_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors', // Apps Script web apps don't return CORS headers
+        body: params
+      })
+      .then(() => {
+        confirmMsg.style.display = 'block';
+        form.reset();
+        label.textContent = 'Select treatments…';
+        toggle.classList.remove('has-selection');
+      })
+      .catch(() => {
+        // Fallback to email if the request never leaves the browser
+        const subject = encodeURIComponent('Callback Request — danA Wellness Clinic');
+        const body = encodeURIComponent(
+          'Name: ' + name + '\nPhone: ' + phone + '\nEmail: ' + email + '\nInterested in: ' + treatments + '\n\nPlease call me back to schedule an appointment.'
+        );
+        window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
+        confirmMsg.style.display = 'block';
+      })
+      .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Request Callback';
+      });
     });
   </script>
 
@@ -342,6 +385,16 @@ cursor: pointer;
     .info-card h4 { font-family: 'Cormorant Garamond', serif; margin-bottom: 0.3rem; }
     .info-card p { font-size: 0.85rem; color: var(--ink-soft); }
     .info-card a { color: inherit; }
+
+    /* Honeypot — visually removed but still present for bots to fill */
+    .hp-field {
+      position: absolute !important;
+      left: -9999px !important;
+      top: -9999px !important;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+    }
 
     /* Form fields */
     .field { margin-bottom: 0.8rem; }
