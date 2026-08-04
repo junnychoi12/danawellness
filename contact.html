@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — danA Wellness Clinic</title>
+
+  <!-- SEO -->
+  <meta name="description" content="Contact danA Wellness Clinic in San Mateo — send a message, call (650) 288-8467, or visit us at 215 N San Mateo Dr, Fl 2 Ste 9." />
+  <link rel="canonical" href="https://danawellnessclinic.com/contact.html" />
+
+  <!-- Open Graph / social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="danA Wellness Clinic" />
+  <meta property="og:title" content="Contact — danA Wellness Clinic" />
+  <meta property="og:description" content="Send a message, call us, or visit our San Mateo clinic. We'd love to hear from you." />
+  <meta property="og:url" content="https://danawellnessclinic.com/contact.html" />
+  <meta property="og:image" content="https://danawellnessclinic.com/images/consultation-clinic.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact — danA Wellness Clinic" />
+  <meta name="twitter:description" content="Send a message, call us, or visit our San Mateo clinic. We'd love to hear from you." />
+  <meta name="twitter:image" content="https://danawellnessclinic.com/images/consultation-clinic.webp" />
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='16' fill='%23FAF6F0'/%3E%3Ctext x='4' y='23' font-family='Georgia' font-size='18' fill='%232A2721'%3Ed%3C/text%3E%3Ctext x='14' y='23' font-family='Georgia' font-weight='700' font-size='21' fill='%234A6741'%3EA%3C/text%3E%3C/svg%3E" />
   <link rel="stylesheet" href="styles.css?v=3" />
 </head>
@@ -47,6 +64,12 @@
         Prefer to talk? Call us directly at <a href="tel:+16502888467" style="color:var(--rose-deep)">(650) 288-8467</a> or <a href="tel:+12134082503" style="color:var(--rose-deep)">(213) 408-2503</a> — we're happy to help you book or answer questions over the phone.
       </p>
       <form id="contactForm" style="margin-top:1.5rem">
+        <!-- Honeypot: hidden from humans, bots tend to fill it. Do not remove. -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="c-company">Company</label>
+          <input type="text" id="c-company" name="company" tabindex="-1" autocomplete="off" />
+        </div>
+
         <div class="field">
           <label for="c-name">Full Name</label>
           <input type="text" id="c-name" required />
@@ -60,8 +83,12 @@
           <textarea id="c-message" rows="5" required></textarea>
         </div>
         <button type="submit" class="dana-btn filled" style="width:100%;justify-content:center">Send Message</button>
-        <p class="form-note">Submitting opens an email to us with your message. Prefer to book directly? Visit our <a href="book.html" style="color:var(--rose-deep)">Book Appointment</a> page.</p>
+        <p class="form-note">Prefer to book directly? Visit our <a href="book.html" style="color:var(--rose-deep)">Book Appointment</a> page.</p>
       </form>
+
+      <div id="contactConfirm" style="display:none;border-left:2px solid var(--sage);padding:0.8rem 1rem;margin-top:1rem;font-size:0.85rem;border-radius:10px;background:rgba(150,167,141,0.12);">
+        Thank you! We've received your message and will get back to you soon. For anything urgent, call us at <a href="tel:+16502888467" style="color:var(--rose-deep)">(650) 288-8467</a>.
+      </div>
     </div>
   </section>
 
@@ -123,14 +150,51 @@
   </footer>
 
   <script>
+    // Sends contact messages to the same Google Sheet endpoint as the callback form.
+    var CONTACT_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyDhYD1_TxHOmYmoRdKJJ40dIt0qdXvp8p6wOIrxK6W5gS-uHbYjpdij-9j73QheE-i/exec';
+
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      var name = document.getElementById('c-name').value;
-      var email = document.getElementById('c-email').value;
-      var message = document.getElementById('c-message').value;
-      var subject = encodeURIComponent('Message from ' + name + ' — danA Wellness Clinic Website');
-      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-      window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
+      var form = document.getElementById('contactForm');
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var confirmMsg = document.getElementById('contactConfirm');
+
+      var name = document.getElementById('c-name').value.trim();
+      var email = document.getElementById('c-email').value.trim();
+      var message = document.getElementById('c-message').value.trim();
+      var company = document.getElementById('c-company').value.trim(); // honeypot
+
+      // Simple form-encoded body avoids a CORS preflight against Apps Script.
+      var params = new URLSearchParams();
+      params.append('formType', 'Contact');
+      params.append('name', name);
+      params.append('email', email);
+      params.append('message', message);
+      params.append('company', company); // honeypot — server drops the row if filled
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending…';
+
+      fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors', // Apps Script web apps don't return CORS headers
+        body: params
+      })
+      .then(function() {
+        confirmMsg.style.display = 'block';
+        form.reset();
+      })
+      .catch(function() {
+        // Fallback to email if the request never leaves the browser
+        var subject = encodeURIComponent('Message from ' + name + ' — danA Wellness Clinic Website');
+        var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+        window.location.href = 'mailto:info@danawellnessclinic.com?subject=' + subject + '&body=' + body;
+        confirmMsg.style.display = 'block';
+      })
+      .finally(function() {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Send Message';
+      });
     });
     document.addEventListener('click', function(e) {
   var nav = document.getElementById('mainNav');
