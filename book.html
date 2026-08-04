@@ -105,18 +105,18 @@
             <!-- Full Name -->
             <div class="field">
               <label for="cb-name">Full Name</label>
-              <input type="text" id="cb-name" required style="background:#fff" />
+              <input type="text" id="cb-name" required />
             </div>
 
             <!-- Phone + Email side by side -->
             <div class="field-row">
               <div class="field">
                 <label for="cb-phone">Phone</label>
-                <input type="tel" id="cb-phone" required style="background:#fff" />
+                <input type="tel" id="cb-phone" required />
               </div>
               <div class="field">
                 <label for="cb-email">Email (optional)</label>
-                <input type="email" id="cb-email" style="background:#fff" />
+                <input type="email" id="cb-email" />
               </div>
             </div>
 
@@ -414,20 +414,7 @@ cursor: pointer;
       overflow: hidden;
     }
 
-    /* Form fields */
-    .field { margin-bottom: 0.8rem; }
-    .field label {
-      display: block; font-size: 0.78rem; font-weight: 600;
-      color: var(--ink-soft); margin-bottom: 0.3rem;
-      text-transform: uppercase; letter-spacing: 0.04em;
-    }
-    .field input[type="text"],
-    .field input[type="tel"],
-    .field input[type="email"] {
-      width: 100%; padding: 0.7rem 1rem; border: 1px solid var(--sage);
-      border-radius: 10px; font-size: 0.9rem; box-sizing: border-box;
-    }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    
     .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 
 .book-phone-group {
